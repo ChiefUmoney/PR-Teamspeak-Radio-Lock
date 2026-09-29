@@ -75,8 +75,7 @@ The original bundled README describes the pilot plugin's original tests. Those h
 
 - `assets/busy.wav`: the converted replacement sound.
 - `CHANGELOG.md`: changes in this edition.
-
-https://github.com/ChiefUmoney/PR-Teamspeak-Radio-Lock/releases/tag/radio-lock
 - `RELEASE-NOTES.md`: release description.
 
+Radio Lock Download: https://github.com/ChiefUmoney/PR-Teamspeak-Radio-Lock/releases/tag/radio-lock
 This repository distributes a compiled plugin with a replacement audio resource. **The original plugin source code was not supplied and is not included.** The plugin still reports version 0.1.0; the GitHub tag identifies the custom sound edition.
