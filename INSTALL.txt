@@ -1,18 +1,13 @@
-Project Reality Radio Lock — custom busy sound
+Project Reality Radio Lock 0.2.0 — no transmission duration cutoff
 
-1. Close TeamSpeak 3.
-2. Open Project-Reality-Radio-Lock-0.1.0-custom-busy-win64.ts3_plugin.
-3. Install/update the existing Project Reality Radio Lock plugin, allowing its busy.wav resource to be replaced.
-4. Reopen TeamSpeak and confirm Project Reality Radio Lock is enabled in Tools > Options > Addons.
+Close TeamSpeak 3. Open Project-Reality-Radio-Lock-0.2.0-win64.ts3_plugin and install/update it. Restart TeamSpeak and confirm Project Reality Radio Lock version 0.2.0 is enabled in Addons. Every participant should upgrade.
 
-Keep the existing [PR-RADIO] marker in protected channel topics. Every participating user needs the radio-lock plugin enabled; users who want the new sound should install this package.
+Keep [PR-RADIO] in protected channel topics. Keep native Push-To-Talk enabled and disable Add Voice Activity Detection. After joining, release PTT and wait about three seconds.
 
-Test with two users: A holds PTT and talks. B presses PTT while A is talking. B should hear the supplied sound locally and remain blocked. B must release PTT and press again after A finishes.
+Hold PTT, wait for the permit beep, and talk for as long as you need. There is no maximum transmission length. Release PTT to free the channel.
 
-Change made: plugins/pr_radio_lock/busy.wav now uses the supplied whisper_notify.wav, converted from 24-bit stereo 44.1 kHz to the original beep's 16-bit mono 48 kHz PCM format. Duration is approximately 0.109 seconds. The DLL, permit beep, package metadata, and original README are unchanged and verified by SHA-256 comparisons.
+If someone else presses PTT while the radio is occupied, only that person hears the custom busy sound and their outgoing audio is blocked. They must release and press again after the current speaker finishes. A held denied key does not auto-transmit later.
 
-The existing plugin also uses busy.wav for controller-unavailable and other denied-transmission cases. Those cases now play the same replacement sound. The sound's triggers and locking logic were not modified.
+Connection-health checks remain, so a disconnect or lost controller can close the gate and require rekeying. The sound is also used for those existing denied/unavailable cases.
 
-The original plugin still identifies itself as version 0.1.0. Its included README describes the original pilot build; the notes above describe this sound-only modification.
-
-Verified: package structure, unchanged binary/resources, WAV format, duration, and non-silent output. A live two-user TeamSpeak session has not been tested here.
+Automated tests passed: three simulated one-hour transmissions, 100 network-fault simulations, and a continuous 33-second compiled-DLL test crossing the former 30-second cutoff. Live two-user TeamSpeak voice has not been tested here. Follow README.md for a two-person check before general rollout.

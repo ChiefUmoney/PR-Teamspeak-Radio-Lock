@@ -1,2 +1,3 @@
-10c0ee6e36fdc8f3054322d4fe22cfef9cc041b40502f62e83d0eedf88302eed  INSTALL.txt
-308e7479b3ac06e35a8678a27c2db44c6a224c3fff76c61eb90d5d45eb09ff67  Project-Reality-Radio-Lock-0.1.0-custom-busy-win64.ts3_plugin
+d790d414e45f584709bce17d4fcb60a16eef6458d3ccef01f5f69cb02e347b87  Project-Reality-Radio-Lock-0.2.0-win64.ts3_plugin
+e80e69694f7da4749405030b9587e4796d8925c06a8ae5d5b002fe7dd19574b0  Project-Reality-Radio-Lock-0.2.0-source.zip
+37ce87b90e55e4d3e91a176604846cf6021d3449596a26864ef4bd7591dca01c  INSTALL.txt
