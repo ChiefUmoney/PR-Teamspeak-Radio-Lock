@@ -1,0 +1,18 @@
+Project Reality Radio Lock — custom busy sound
+
+1. Close TeamSpeak 3.
+2. Open Project-Reality-Radio-Lock-0.1.0-custom-busy-win64.ts3_plugin.
+3. Install/update the existing Project Reality Radio Lock plugin, allowing its busy.wav resource to be replaced.
+4. Reopen TeamSpeak and confirm Project Reality Radio Lock is enabled in Tools > Options > Addons.
+
+Keep the existing [PR-RADIO] marker in protected channel topics. Every participating user needs the radio-lock plugin enabled; users who want the new sound should install this package.
+
+Test with two users: A holds PTT and talks. B presses PTT while A is talking. B should hear the supplied sound locally and remain blocked. B must release PTT and press again after A finishes.
+
+Change made: plugins/pr_radio_lock/busy.wav now uses the supplied whisper_notify.wav, converted from 24-bit stereo 44.1 kHz to the original beep's 16-bit mono 48 kHz PCM format. Duration is approximately 0.109 seconds. The DLL, permit beep, package metadata, and original README are unchanged and verified by SHA-256 comparisons.
+
+The existing plugin also uses busy.wav for controller-unavailable and other denied-transmission cases. Those cases now play the same replacement sound. The sound's triggers and locking logic were not modified.
+
+The original plugin still identifies itself as version 0.1.0. Its included README describes the original pilot build; the notes above describe this sound-only modification.
+
+Verified: package structure, unchanged binary/resources, WAV format, duration, and non-silent output. A live two-user TeamSpeak session has not been tested here.
